@@ -1,92 +1,98 @@
-# 🚀 Plantillas para Proyectos de Data Science
+# 🚀 Data Science Project Templates
 
-Un conjunto de plantillas listas para usar que proporcionan una estructura sólida y organizada para proyectos de Data Science principiantes. Estas plantillas incluyen todo lo necesario para comenzar rápidamente con buenas prácticas de organización, gestión de dependencias y automatización.
+A set of ready-to-use templates that provide a solid and organized structure for beginning Data Science projects. These templates include everything you need to get started quickly with good organization, dependency management and automation practices..
 
-## ✨ Características
+## ✨ Features
 
-📁 Estructura organizada: Carpetas predefinidas para datos, notebooks, scripts y documentación
-🐍 Gestión de ambientes: Archivos environment.yml y requirements.txt incluidos
-🔧 Automatización: Post-hooks para instalación automática de dependencias
+📁 Organized Structure: Predifine folders for data, notebooks, scripts and docs
+🐍 Environment management: environments.yml and requirements.txt included
+🔧 Automatization: Post-hooks for automatic dependencies instalation
 🔄 Git integrado: Configuración automática de Git y limpieza de archivos
-📊 Notebooks organizados: Estructura clara para análisis exploratorio y modelado
-🧹 Limpieza automática: Eliminación de archivos temporales y cache
+📊 Organized notebooks: Clear structure for exploratory analysis and modeling
+🧹 Automatic cleanup: Temporary files and cache deletion
 
-## 🛠️ Requisitos Previos
+## 🛠️ Prerequisites
 
-Antes de usar estas plantillas, asegúrate de tener instalado:
+Before using these templates, make sure you have installed:
 
-Conda - Para la creación y gestión de ambientes virtuales
-Cookiecutter - Para la generación de plantillas
+Conda - For the creation and management of virtual environments
+Cookiecutter - For template generation.
 
-## Instalación de Cookiecutter
+## Cookiecutter installation
 
 ```bash
-# Con pip
+# pip
 pip install cookiecutter
 
-# Con conda
+# Conda
 conda install cookiecutter
 ```
 
-## 🚀 Obtencion Plantillas en Local
+## 🚀 Obtaining Templates
 
 ```bash
- # Clonar el repositorio
+ # Clone repository
 git clone https://github.com/DiegoRiveraDerpich/Templates_DS_cookiecutter.git
 
-# Navegar al directorio
-cd tu-repositorio
+# Navigate directory
+cd your-repository
 
-# Usar la plantilla desde el directorio local
-cookiecutter plantilla-seleccionada
+# Use template from local directory
+cookiecutter template-directory
+
+# Example
+cookiecutter EDA_project
 ```
 
 ## Crear un nuevo proyecto
 
 ```bash
-cookiecutter Plantilla-seleccionada
+cookiecutter template-directory
+
+# Example
+cookiecutter EDA_project
 ```
 
-Sigue las instrucciones interactivas para configurar tu proyecto con:
+Follow the interactive instructions to configure your project with:
 
-Nombre del proyecto
-Descripción
-Autor
-Configuraciones específicas
+Project name
+Description
+Author
+Specific settings
 
-Configuración inicial
-Una vez creado el proyecto, los post-hooks se encargarán automáticamente de:
+Initial configuration
+Once the project is created, post-hooks will automatically take care of:
 
-Crear el ambiente conda
-Instalar las dependencias
-Inicializar el repositorio Git
-Configurar los archivos de limpieza
+Create the conda environment
+Install dependencies
+Initialize the Git repository
+Configure cleanup files
 
-## 🤝 Contribuciones
+## 🤝 Contributions
 
-Las contribuciones son bienvenidas. Por favor:
+Contributions are welcome. Please:
 
-Fork el repositorio
-Crea una rama para tu feature (git checkout -b feature/nueva-caracteristica)
-Commit tus cambios (git commit -am 'Añade nueva característica')
-Push a la rama (git push origin feature/nueva-caracteristica)
-Crea un Pull Request
+Fork the repository
+Create a branch for your feature (git checkout -b feature/new-feature)
+Commit your changes (git commit -am 'Add new feature')
+Push to the branch (git push origin feature/new-feature)
+Create a Pull Request
 
-## 📝 Licencia
+## 📝 License
 
-Este proyecto está licenciado bajo la Licencia MIT. Ver el archivo LICENSE para más detalles.
+This project is licensed under the MIT License. See the LICENSE file for more details.
 
 ## 🆘 Soporte
 
-Si encuentras algún problema o tienes sugerencias:
+If you encounter any problems or have suggestions:
 
-Abre un issue
-Consulta la documentación
-Contacta al mantenedor
+Open an issue
+Consult the documentation
+Contact the maintainer
 
-🙏 Reconocimientos
+## 🙏 Acknowledgments
 
-Inspirado en las mejores prácticas de la comunidad de Data Science
-Basado en el Cookiecutter Data Science
+Inspired by the best practices of the Data Science community
+Based on Cookiecutter Data Science
 
-⭐ ¡No olvides dar una estrella al repositorio si te resulta útil!
+## ⭐ Don't forget to give a star to the repository if you find it useful
