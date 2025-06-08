@@ -47,6 +47,7 @@ cookiecutter EDA_project
 ## ✏️ Create a new project
 
 ```bash
+# Star a new project
 cookiecutter template-directory
 
 # Example
@@ -92,7 +93,7 @@ Contact the maintainer
 
 ## 🙏 Acknowledgments
 
-Inspired by the best practices of the Data Science community
+Inspired by the best practices of the Data Science community  
 Based on Cookiecutter Data Science
 
 ## ⭐ Don't forget to give a star to the repository if you find it useful
