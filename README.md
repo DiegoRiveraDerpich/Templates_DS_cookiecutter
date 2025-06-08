@@ -18,7 +18,7 @@ Before using these templates, make sure you have installed:
 Conda - For the creation and management of virtual environments  
 Cookiecutter - For template generation.
 
-## Cookiecutter installation
+## 🍪 Cookiecutter installation
 
 ```bash
 # pip
@@ -44,7 +44,7 @@ cookiecutter template-directory
 cookiecutter EDA_project
 ```
 
-## Create a new project
+## ✏️ Create a new project
 
 ```bash
 cookiecutter template-directory
@@ -82,7 +82,7 @@ Create a Pull Request
 
 This project is licensed under the MIT License. See the LICENSE file for more details.
 
-## 🆘 Soporte
+## 🆘 Support
 
 If you encounter any problems or have suggestions:
 
