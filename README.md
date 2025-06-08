@@ -4,18 +4,18 @@ A set of ready-to-use templates that provide a solid and organized structure for
 
 ## ✨ Features
 
-📁 Organized Structure: Predifine folders for data, notebooks, scripts and docs
-🐍 Environment management: environments.yml and requirements.txt included
-🔧 Automatization: Post-hooks for automatic dependencies instalation
-🔄 Git integrado: Configuración automática de Git y limpieza de archivos
-📊 Organized notebooks: Clear structure for exploratory analysis and modeling
+📁 Organized Structure: Predifine folders for data, notebooks, scripts and docs  
+🐍 Environment management: environments.yml and requirements.txt included  
+🔧 Automatization: Post-hooks for automatic dependencies instalation  
+🔄 Integrated Git: Automatic Git configuration and file cleanup  
+📊 Organized notebooks: Clear structure for exploratory analysis and modeling  
 🧹 Automatic cleanup: Temporary files and cache deletion
 
 ## 🛠️ Prerequisites
 
 Before using these templates, make sure you have installed:
 
-Conda - For the creation and management of virtual environments
+Conda - For the creation and management of virtual environments  
 Cookiecutter - For template generation.
 
 ## Cookiecutter installation
@@ -44,7 +44,7 @@ cookiecutter template-directory
 cookiecutter EDA_project
 ```
 
-## Crear un nuevo proyecto
+## Create a new project
 
 ```bash
 cookiecutter template-directory
@@ -55,27 +55,27 @@ cookiecutter EDA_project
 
 Follow the interactive instructions to configure your project with:
 
-Project name
-Description
-Author
+Project name  
+Description  
+Author  
 Specific settings
 
-Initial configuration
+Initial configuration  
 Once the project is created, post-hooks will automatically take care of:
 
-Create the conda environment
-Install dependencies
-Initialize the Git repository
+Create the conda environment  
+Install dependencies  
+Initialize the Git repository  
 Configure cleanup files
 
 ## 🤝 Contributions
 
 Contributions are welcome. Please:
 
-Fork the repository
-Create a branch for your feature (git checkout -b feature/new-feature)
-Commit your changes (git commit -am 'Add new feature')
-Push to the branch (git push origin feature/new-feature)
+Fork the repository  
+Create a branch for your feature (git checkout -b feature/new-feature)  
+Commit your changes (git commit -am 'Add new feature')  
+Push to the branch (git push origin feature/new-feature)  
 Create a Pull Request
 
 ## 📝 License
@@ -86,8 +86,8 @@ This project is licensed under the MIT License. See the LICENSE file for more de
 
 If you encounter any problems or have suggestions:
 
-Open an issue
-Consult the documentation
+Open an issue  
+Consult the documentation  
 Contact the maintainer
 
 ## 🙏 Acknowledgments
