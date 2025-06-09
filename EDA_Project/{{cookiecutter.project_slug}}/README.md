@@ -2,30 +2,32 @@
 
 {{ cookiecutter.description }}
 
-Fue generado automáticamente usando Cookiecutter para agilizar la creación de proyectos robustos.
+It was automatically generated using Cookiecutter to streamline the creation of robust projects.
 
 ---
 
 ## 📂 Estructura del Proyecto
 
-
+```text
 EDA_project/
 └── {{cookiecutter.project_slug}}/
-    ├── LICENSE                     # Licencia del proyecto
-    ├── README.md                   # Este archivo
+    ├── LICENSE                     # Project License
+    ├── README.md                   
     ├── data/
-    │   ├── cleeaned/               # Datos limpios y procesados
-    │   └── raw/                    # Datos crudos sin procesar
-    ├── environments.yml            # Entorno Conda con dependencias
-    ├── notebooks/                  # Jupyter notebooks para exploración y experimentos
+    │   ├── cleeaned/               # Clean and processed data
+    │   └── raw/                    # Raw data
+    ├── environments.yml            # Conda environment with dependencies
+    ├── notebooks/                  # Jupyter notebooks for exploration and experiments
     │   └── 01_eda.ipynb
     ├── outputs/
-    │   ├── plots/                  # Visualizaciones generadas
-    │   └── tables/                 # Tablas resumen y estadísticas
+    │   ├── plots/                  # Visualizations generated
+    │   └── tables/                 # Summary and statistical tables
     └── src/
-        └── __init__.py             # Módulo principal de código fuente
+        └── __init__.py             # Main source code
+```
 
-## ⚙️ Dependencias principales
+## ⚙️ Packages
+
 - python={{ cookiecutter.python_version }}
 - pandas
 - numpy
@@ -36,19 +38,21 @@ EDA_project/
 - ipykernel
 - notebook
 
-Todas las dependencias están especificadas en environment.yml.
-Es posible que falten algunas dependencias en el archivo environment.yml, dependiendo de los requisitos específicos de tu proyecto.
+All dependencies are specified in environment.yml.
+Some dependencies may be missing in the environment.yml file, depending on the specific requirements of your project.
 
-Para crear el entorno:
+To create the environment:
 
 ```bash
 conda env create -f environments.yml
-conda activate <nombre_del_entorno>
+conda activate <environment-name>
 ```
 
-## 👤 Autor
+## 👤 Author
+
 {{ cookiecutter.author_name }}
 
-## 📄 Licencia
-Este proyecto está licenciado bajo la licencia {{ cookiecutter.license }}.
-Consulta el archivo LICENSE para más detalles.
+## 📄 License
+
+This project is licensed under the {{ cookiecutter.license }}.
+See the LICENSE file for more details.
