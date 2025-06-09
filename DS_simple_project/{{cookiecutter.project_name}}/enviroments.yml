@@ -1,0 +1,30 @@
+name : {{cookiecutter.project_name}}
+channels:
+  - conda-forge
+  - defaults
+dependencies:
+  - python=3.8
+  - pip
+  - pip:
+      - black
+      - flake8
+      - isort
+      - mypy
+      - pytest
+      - pytest-cov
+      - pre-commit
+      - tox
+      - coverage
+      - sphinx
+      - sphinx-autodoc-typehints
+      - sphinx-rtd-theme
+      - jupyterlab
+      - ipykernel
+  # Add any other dependencies you need here.
+  # For example, if you need numpy and pandas, you can add them like this:
+  # - numpy
+  # - pandas
+  # If you need to install a specific version of a package, you can specify it like this:
+  # - numpy=1.21.0
+  # If you need to install a package from a specific channel, you can specify it like this:
+  # - conda-forge::numpy
