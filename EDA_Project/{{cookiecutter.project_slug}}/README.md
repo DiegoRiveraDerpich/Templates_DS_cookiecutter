@@ -6,7 +6,7 @@ It was automatically generated using Cookiecutter to streamline the creation of 
 
 ---
 
-## 📂 Estructura del Proyecto
+## 📂 Project Structure
 
 ```text
 EDA_project/
