@@ -3,12 +3,12 @@ import subprocess
 import sys
 
 def find_environment_file():
-    """Busca archivos de entorno en diferentes formatos y ubicaciones"""
+    """Search for environment files in different formats and locations."""
     possible_files = [
         "environment.yml",    # Singular
         "environments.yml",   # Plural
-        "conda-env.yml",      # Alternativo
-        "env.yml"            # Corto
+        "conda-env.yml",      # Alternative
+        "env.yml"            # Short
     ]
     
     for filename in possible_files:
@@ -17,15 +17,15 @@ def find_environment_file():
     return None
 
 def show_environment_packages():
-    """Muestra los paquetes del archivo de entorno encontrado"""
+    """Displays the packages of the found environment file"""
     env_file = find_environment_file()
     
     if not env_file:
-        print("⚠️  No se encontró archivo de entorno conda")
-        print("    Archivos buscados: environment.yml, environments.yml, conda-env.yml, env.yml")
+        print("⚠️  No environment file found conda")
+        print("    Wanted files: environment.yml, environments.yml, conda-env.yml, env.yml")
         return False
     
-    print(f"\n📦 PAQUETES EN {env_file.upper()}:")
+    print(f"\n📦 PACKAGES IN {env_file.upper()}:")
     print("-" * 50)
     
     try:
@@ -48,29 +48,29 @@ def show_environment_packages():
                     break
             
             if package_count == 0:
-                print("  (No se encontraron paquetes en la sección dependencies)")
+                print("  (No packages found in the dependencies section)")
                 
     except Exception as e:
-        print(f"⚠️  Error leyendo {env_file}: {e}")
+        print(f"⚠️  Error reading {env_file}: {e}")
         return False
     
     print("-" * 50)
-    print(f"📊 Total: {package_count} paquetes")
+    print(f"📊 Total: {package_count} packages")
     return True
 
 def ask_conda_confirmation():
-    """Pregunta si quiere crear el entorno después de mostrar los paquetes"""
-    print("\n¿Quieres crear el entorno conda con estos paquetes?")
-    print("  y/s = Sí, crear entorno ahora")
-    print("  n   = No, solo mostrar comandos para después")
-    print("  c   = Cancelar todo el proceso")
-    print("\nOpción [y]: ", end="")
+    """Ask if you want to create the environment after displaying the packages"""
+    print("\nDo you want to create the conda environment with these packages?")
+    print("  y = Yes, create environment now")
+    print("  n   = No, just display commands for later")
+    print("  c   = Cancel the entire process")
+    print("\nOption [y]: ", end="")
     
     response = input().lower().strip()
     
-    if response in ['c', 'cancel', 'cancelar']:
-        print("❌ Proceso cancelado por el usuario")
-        # Limpiar archivos generados
+    if response in ['c', 'cancel']:
+        print("❌ Process canceled by user")
+        # Clean generated files
         import shutil
         project_dir = os.getcwd()
         parent_dir = os.path.dirname(project_dir)
@@ -78,9 +78,9 @@ def ask_conda_confirmation():
         os.chdir(parent_dir)
         try:
             shutil.rmtree(project_name)
-            print(f"🗑️  Directorio {project_name} eliminado")
+            print(f"🗑️  Directory {project_name} eliminated")
         except Exception:
-            print(f"⚠️  No se pudo eliminar el directorio {project_name}")
+            print(f"⚠️  Could not delete the directory {project_name}")
         sys.exit(0)
     elif response in ['n', 'no']:
         return False
@@ -92,18 +92,18 @@ def create_conda_env():
     create_env = "{{ cookiecutter.create_conda_env }}"
     env_name = "{{ cookiecutter.conda_env_name }}"
     
-    print("\n🔧 CONFIGURACIÓN DEL ENTORNO CONDA")
+    print("\n🔧 CONDA ENVIRONMENT CONFIGURATION")
     print("=" * 50)
     
-    # Buscar y mostrar archivo de entorno
+    # Search and display environment file
     env_file = find_environment_file()
     packages_found = show_environment_packages()
     
     if not packages_found:
-        print("❌ No se puede continuar sin archivo de entorno")
+        print("❌ Cannot continue without environment file")
         return
     
-    # Determinar qué hacer
+    # Determine what to do
     should_create = False
     
     if create_env.lower() == "yes":
@@ -111,10 +111,10 @@ def create_conda_env():
     elif create_env.lower() == "no":
         should_create = False
     
-    # Proceder según la decisión
+    # Proceed according to the decision
     if should_create:
         try:
-            print(f"\n🚀 Creando entorno '{env_name}' desde {env_file}...")
+            print(f"\n🚀 Creating environment '{env_name}' from {env_file}...")
             result = subprocess.run(
                 ["conda", "env", "create", "-f", env_file, "-n", env_name], 
                 capture_output=True,
@@ -123,48 +123,48 @@ def create_conda_env():
             )
             
             if result.returncode == 0:
-                print(f"✅ Entorno '{env_name}' creado exitosamente!")
-                print(f"\n💡 Para activarlo usa:")
+                print(f"✅ Environment '{env_name}' successfully created!")
+                print(f"\n💡 To activate it use:")
                 print(f"   conda activate {env_name}")
             else:
-                print(f"❌ Error creando el entorno:")
+                print(f"❌ Error creating the environment:")
                 print(f"   {result.stderr}")
-                print(f"\n💡 Puedes crearlo manualmente:")
+                print(f"\n💡 You can create it manually:")
                 print(f"   conda env create -f {env_file} -n {env_name}")
                 
         except FileNotFoundError:
-            print("❌ conda no está instalado o no está en el PATH")
-            print(f"💡 Instala conda y ejecuta:")
+            print("❌ conda is not installed or not in the PATH")
+            print(f"💡 Install conda and run:")
             print(f"   conda env create -f {env_file} -n {env_name}")
         except Exception as e:
             print(f"❌ Error: {e}")
     else:
-        print(f"\n📋 ENTORNO NO CREADO")
-        print(f"💡 Para crearlo cuando quieras:")
+        print(f"\n📋 UNCREATED ENVIRONMENT")
+        print(f"💡 To create it whenever you want:")
         print(f"   conda env create -f {env_file} -n {env_name}")
         print(f"   conda activate {env_name}")
 
 def init_git():
-    """Inicializa el repositorio Git y realiza un commit inicial."""
+    """Initializes the Git repository and performs an initial commit."""
     try:
         subprocess.run(["git", "init"], check=True, capture_output=True)
         subprocess.run(["git", "add", "."], check=True, capture_output=True)
         subprocess.run(["git", "commit", "-m", "Initial commit"], check=True, capture_output=True)
-        print("✅ Repositorio Git inicializado")
+        print("✅ Initialized Git repository")
     except subprocess.CalledProcessError:
-        print("⚠️  Error inicializando Git")
+        print("⚠️  Error initializing Git")
     except FileNotFoundError:
-        print("⚠️  Git no está instalado")
+        print("⚠️  Git is not installed")
 
 def cleanup_files():
-    """Limpiar archivos no necesarios."""
+    """Clean unneeded files."""
     files_to_remove = [".DS_Store", "Thumbs.db", "desktop.ini"]
     dirs_to_remove = ["__pycache__", ".pytest_cache"]
     removed_count = 0
     
-    # Limpiar recursivamente
+    # Recursive cleaning
     for root, dirs, files in os.walk("."):
-        # Remover directorios
+        # Remove directories
         for dir_name in list(dirs):
             if dir_name in dirs_to_remove:
                 dir_path = os.path.join(root, dir_name)
@@ -174,7 +174,7 @@ def cleanup_files():
                 except Exception:
                     pass
         
-        # Remover archivos
+        # Remove archives
         for file in files:
             if file in files_to_remove or file.endswith('.pyc'):
                 try:
@@ -184,46 +184,46 @@ def cleanup_files():
                     pass
     
     if removed_count > 0:
-        print(f"🧹 {removed_count} archivos/directorios temporales eliminados")
+        print(f"🧹 {removed_count} deleted temporary files/directories")
 
 def show_final_summary():
-    """Muestra un resumen final del proyecto configurado"""
+    """Displays a final summary of the configured project"""
     env_name = "{{ cookiecutter.conda_env_name }}"
     create_env = "{{ cookiecutter.create_conda_env }}"
     
-    print(f"\n📋 RESUMEN DEL PROYECTO:")
-    print(f"   • Nombre: {{ cookiecutter.project_name }}")
-    print(f"   • Directorio: {{ cookiecutter.project_slug }}")
-    print(f"   • Autor: {{ cookiecutter.author_name }}")
+    print(f"\n📋 PROJECT SUMMARY:")
+    print(f"   • Name: {{ cookiecutter.project_name }}")
+    print(f"   • Directories: {{ cookiecutter.project_slug }}")
+    print(f"   • Author: {{ cookiecutter.author_name }}")
     
     if create_env.lower() == "yes":
-        print(f"   • Entorno conda: {env_name}")
-        print(f"   • Para activar: conda activate {env_name}")
+        print(f"   • Environment conda: {env_name}")
+        print(f"   • To activate: conda activate {env_name}")
     else:
-        print(f"   • Entorno conda: {env_name} (no creado)")
+        print(f"   • Environment conda: {env_name} (not created)")
     
-    print(f"   • Git: Repositorio inicializado")
+    print(f"   • Git: Initialized repository")
 
 def main():
-    """Función principal que ejecuta todas las tareas post-generación."""
-    print("\n🚀 CONFIGURANDO PROYECTO")
+    """Main function that executes all post-generation tasks."""
+    print("\n🚀 CONFIGURING PROJECT")
     print("=" * 60)
 
-    # Configurar entorno conda
+    # Configure conda environment
     create_conda_env()
 
-    # Limpiar archivos no necesarios
-    print("\n🧹 Limpiando archivos temporales...")
+    # Clean unneeded files
+    print("\n🧹 Cleaning up temporary files...")
     cleanup_files()
 
-    # Inicializar repositorio git
-    print("\n📚 Inicializando repositorio Git...")
+    # Initialize git repository
+    print("\n📚 Initializing Git repository...")
     init_git()
 
     # Mostrar resumen
     show_final_summary()
 
-    print("\n🎉 ¡PROYECTO CONFIGURADO EXITOSAMENTE!")
+    print("\n🎉 PROJECT SUCCESSFULLY CONFIGURED!")
 
 if __name__ == "__main__":
     main()
