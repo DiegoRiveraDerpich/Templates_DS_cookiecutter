@@ -94,6 +94,6 @@ Contact the maintainer
 ## 🙏 Acknowledgments
 
 Inspired by the best practices of the Data Science community  
-Based on Cookiecutter Data Science
+Based on Cookiecutter Data Science.
 
 ## ⭐ Don't forget to give a star to the repository if you find it useful
