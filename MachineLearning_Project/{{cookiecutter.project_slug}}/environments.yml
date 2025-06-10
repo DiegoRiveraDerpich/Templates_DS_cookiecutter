@@ -14,7 +14,7 @@ dependencies:
   - ipykernel
   - jupyterlab
 
-  # Manejo de datos
+  # Data Manipulation and Analysis
   - numpy
   - pandas
   - scipy
@@ -23,11 +23,11 @@ dependencies:
   # Machine Learning
   - scikit-learn
 
-  # Visualización
+  # Visualization
   - matplotlib
   - seaborn
 
-  # Utilidades
+  # Utilities
   - tqdm
 
   # Testing
