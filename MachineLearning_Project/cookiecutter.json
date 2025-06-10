@@ -1,0 +1,10 @@
+{
+    "project_name": "My Machine Learning Project",
+    "project_slug": "{{ cookiecutter.project_name|lower|replace(' ', '_') }}",
+    "author_name": "Your Name",
+    "description": "Un proyecto de Machine Learning con scripts y notebooks.",
+    "python_version": ["3.12", "3.11", "3.10", "3.9"],
+    "license": ["MIT", "GPL", "Apache"],
+    "conda_env_name": "{{ cookiecutter.project_slug }}",
+    "create_conda_env": ["yes", "no"]
+}
