@@ -27,7 +27,7 @@ template1/
     └── test
 ```
 
-## Requisitos
+## Requirements
 
 - Python {{ cookiecutter.python_version }}
 
