@@ -6,26 +6,28 @@ It was automatically generated using Cookiecutter to streamline the creation of 
 
 ---
 
-## 📂 Estructura del Proyecto
+## 📂 Project Structure
 
-
+```text
 {{ cookiecutter.project_slug }}/
-├── data/               # Datos brutos, procesados y externos
+├── data/               # Raw, processed and external data
 │   ├── raw/
 │   ├── processed/
 │   └── external/
-├── notebooks/           # Jupyter notebooks para exploración y experimentos
-├── src/                 # Código fuente del proyecto
-│   ├── data/            # Scripts de carga y transformación de datos
-│   ├── features/        # Scripts de ingeniería de variables
-│   ├── models/          # Entrenamiento y predicción de modelos
-│   └── visualization/   # Scripts de visualización de resultados
-├── tests/               # Pruebas unitarias
-├── environment.yml      # Entorno Conda con dependencias
-├── README.md            # Documentación del proyecto
-└── .gitignore           # Archivos y carpetas ignorados por git
+├── notebooks/           # Jupyter notebooks for exploration and experiments
+├── src/                 # Source code of the project
+│   ├── data/            # Data loading and transformation scripts
+│   ├── features/        # Variable engineering scripts
+│   ├── models/          # Model training and prediction
+│   └── visualization/   # Result visualization scripts.
+├── tests/               # Unit Tests
+├── environment.yml      # Conda environment with dependencies
+├── README.md            # Project Documentation
+└── .gitignore           # Files and folders ignored by git
+```
 
-## ⚙️ Dependencias principales
+## ⚙️ Packages
+
 Python {{ cookiecutter.python_version }}
 numpy
 pandas
@@ -36,19 +38,21 @@ jupyter
 scipy
 tqdm
 
-Todas las dependencias están especificadas en environment.yml.
-Es posible que falten algunas dependencias en el archivo environment.yml, dependiendo de los requisitos específicos de tu proyecto. Por ejemplo:
+All dependencies are specified in environment.yml.
+Some dependencies may be missing in the environment.yml file, depending on the specific requirements of your project. For example:
 
 Deep Learning: tensorflow, pytorch.
-Optimización de hiperparámetros: optuna, scikit-optimize.
-Análisis de series temporales: statsmodels, pmdarima.
-Visualización avanzada: plotly, bokeh.
-Procesamiento de lenguaje natural: nltk, spacy, transformers.
-Asegúrate de revisar las necesidades de tu proyecto y agregar los paquetes necesarios.
+Hyperparameter optimization: optuna, scikit-optimize.
+Time series analysis: statsmodels, pmdarima.
+Advanced visualization: plotly, bokeh.
+Natural language processing: nltk, spacy, transformers.
+Be sure to review the needs of your project and add the necessary packages.
 
-## 👤 Autor
+## 👤 Author
+
 {{ cookiecutter.author_name }}
 
-## 📄 Licencia
-Este proyecto está licenciado bajo la licencia {{ cookiecutter.license }}.
-Consulta el archivo LICENSE para más detalles.
+## 📄 License
+
+This project is licensed under the {{ cookiecutter.license }}.
+See the LICENSE file for more details.
