@@ -28,24 +28,24 @@ It was automatically generated using Cookiecutter to streamline the creation of 
 
 ## ⚙️ Packages
 
-Python {{ cookiecutter.python_version }}
-numpy
-pandas
-scikit-learn
-matplotlib
-seaborn
-jupyter
-scipy
-tqdm
+Python {{ cookiecutter.python_version }}  
+numpy  
+pandas  
+scikit-learn  
+matplotlib  
+seaborn  
+jupyter  
+scipy  
+tqdm  
 
-All dependencies are specified in environment.yml.
+All dependencies are specified in environment.yml.  
 Some dependencies may be missing in the environment.yml file, depending on the specific requirements of your project. For example:
 
-Deep Learning: tensorflow, pytorch.
-Hyperparameter optimization: optuna, scikit-optimize.
-Time series analysis: statsmodels, pmdarima.
-Advanced visualization: plotly, bokeh.
-Natural language processing: nltk, spacy, transformers.
+Deep Learning: tensorflow, pytorch.  
+Hyperparameter optimization: optuna, scikit-optimize.  
+Time series analysis: statsmodels, pmdarima.  
+Advanced visualization: plotly, bokeh.  
+Natural language processing: nltk, spacy, transformers.  
 Be sure to review the needs of your project and add the necessary packages.
 
 ## 👤 Author
