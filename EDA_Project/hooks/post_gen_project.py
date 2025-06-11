@@ -61,9 +61,9 @@ def show_environment_packages():
 def ask_conda_confirmation():
     """Ask if you want to create the environment after displaying the packages"""
     print("\nDo you want to create the conda environment with these packages?")
-    print("  y = Yes, create environment now")
-    print("  n   = No, just display commands for later")
-    print("  c   = Cancel the entire process")
+    print("  y  = Yes, create environment now")
+    print("  n  = No, just display commands for later")
+    print("  c  = Cancel the entire process")
     print("\nOption [y]: ", end="")
     
     response = input().lower().strip()

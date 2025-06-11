@@ -2,7 +2,7 @@
 
 {{ cookiecutter.description }}
 
-Fue generado automáticamente usando Cookiecutter para agilizar la creación de proyectos robustos.
+It was automatically generated using Cookiecutter to streamline the creation of robust projects.
 
 ---
 
