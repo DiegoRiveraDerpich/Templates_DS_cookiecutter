@@ -1,7 +1,7 @@
 {
     "project_name": "Mi proyecto de Machine Learning",
     "project_slug": "{{ cookiecutter.project_name|lower|replace(' ', '_') }}",
-    "author_name": "Tu",
+    "author_name": "Tu Nombre",
     "description": "Un proyecto de Machine Learning con scripts y notebooks.",
     "python_version": ["3.12", "3.11", "3.10", "3.9"],
     "license": ["MIT", "GPL", "Apache"],

@@ -8,6 +8,7 @@ Este proyecto usa Python {{ cookiecutter.python_version }} y esta bajo la licenc
 
 ## Estructura del Proyecto
 
+```text
 template1/  
 ├── cookiecutter.json  
 └── {{cookiecutter.project_name}}  
@@ -24,6 +25,7 @@ template1/
     │   ├── data_processing.py  
     │   └── model.py  
     └── test
+```
 
 ## Requisitos
 
