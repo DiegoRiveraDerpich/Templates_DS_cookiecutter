@@ -1,0 +1,9 @@
+{
+    "project_name": "Mi proyecto",
+    "project_slug": "{{ cookiecutter.project_name | lower | replace(' ', '_') }}",
+    "project_description": "breve descripcion del proyecto",
+    "autor_name": "Tu Nombre",
+    "python_version": "3.9",
+    "license": ["MIT", "GPL", "Apache"]
+
+}

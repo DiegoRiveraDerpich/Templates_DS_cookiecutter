@@ -1,0 +1,34 @@
+name: {{ cookiecutter.conda_env_name }}
+channels:
+  - conda-forge
+  - defaults
+
+dependencies:
+  # Python
+  - python={{ cookiecutter.python_version }}
+  - pip
+
+  # Jupyter
+  - jupyter
+  - notebook
+  - ipykernel
+  - jupyterlab
+
+  # Manejo de datos
+  - numpy
+  - pandas
+  - scipy
+  - statsmodels
+
+  # Machine Learning
+  - scikit-learn
+
+  # Visualización
+  - matplotlib
+  - seaborn
+
+  # Utilidades
+  - tqdm
+
+  # Testing
+  - pytest
